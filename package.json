@@ -1,0 +1,23 @@
+{
+  "name": "middy-redis-cache",
+  "version": "1.0.0",
+  "description": "redis cache middleware for serverless API Gateway routes",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://rajathgunners:artsenal2020@github.com/rajathgunners/middy-redis-cache.git"
+  },
+  "author": "Rajath",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajathgunners/middy-redis-cache/issues"
+  },
+  "homepage": "https://github.com/rajathgunners/middy-redis-cache#readme",
+  "dependencies": {
+    "@middy/core": "^4.5.5",
+    "@redis/client": "^1.5.8"
+  }
+}
