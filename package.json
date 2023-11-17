@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://rajathgunners:artsenal2020@github.com/rajathgunners/middy-redis-cache.git"
+    "url": "git://github.com/rajathgunners/middy-redis-cache.git"
   },
   "author": "Rajath",
   "license": "ISC",
