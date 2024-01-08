@@ -57,3 +57,9 @@ export const getEmployee = middy(async (event: any) => {
     })
 );
 ```
+
+## Configuration Options
+
+These are the available config options.
+
+Except for `redisConfig`, all other options can be set at default global level, applicable to all routes, or at a route level
