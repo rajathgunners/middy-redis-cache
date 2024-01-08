@@ -1,6 +1,6 @@
 {
   "name": "@devraj95/middy-redis-cache",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "redis cache middleware for serverless API Gateway routes",
   "main": "dist/index.js",
   "scripts": {
