@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "test module for redis cache middleware",
+  "main": "index.js",
+  "dependencies": {
+    "@devraj95/middy-redis-cache": "^1.0.0",
+    "@middy/core": "^2.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:debug": "tsc && node --inspect $(which serverless) --config serverless.yml offline start --port 3010"
+  },
+  "author": "",
+  "license": "ISC"
+}

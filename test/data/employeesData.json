@@ -1,0 +1,32 @@
+{
+  "E001": {
+    "employeeId": "E001",
+    "name": "Rajath",
+    "Age": 30,
+    "Designation": "Software Enginner I"
+  },
+  "E002": {
+    "employeeId": "E002",
+    "name": "Rohith",
+    "Age": 40,
+    "Designation": "Software Enginner II"
+  },
+  "E003": {
+    "employeeId": "E003",
+    "name": "Sangita",
+    "Age": 50,
+    "Designation": "Manager"
+  },
+  "E004": {
+    "employeeId": "E004",
+    "name": "Ashwin",
+    "Age": 60,
+    "Designation": "CEO"
+  },
+  "E005": {
+    "employeeId": "E005",
+    "name": "Manoj",
+    "Age": 30,
+    "Designation": "CTO"
+  }
+}

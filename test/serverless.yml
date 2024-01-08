@@ -1,0 +1,33 @@
+service: middy-redis-cache-test
+frameworkVersion: "2 || 3"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-south-1
+  profile: rajath-aws-admin-user
+
+package:
+  include:
+    - dist/**
+    - node_modules/**
+    - data/**
+  exclude:
+    - src/**
+    - package-lock.json
+    - package.json
+
+functions:
+  getEmployees:
+    handler: dist/employeesController.getEmployees
+    events:
+      - http:
+          path: /employees
+          method: get
+
+  getEmployee:
+    handler: dist/employeesController.getEmployee
+    events:
+      - http:
+          path: /employees/{employeeId}
+          method: get
