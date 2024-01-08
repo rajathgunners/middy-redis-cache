@@ -4,7 +4,7 @@
   "description": "test module for redis cache middleware",
   "main": "index.js",
   "dependencies": {
-    "@devraj95/middy-redis-cache": "^1.0.0",
+    "@devraj95/middy-redis-cache": "^1.0.1",
     "@middy/core": "^2.4.3"
   },
   "devDependencies": {
