@@ -42,10 +42,16 @@ export const getEmployee = middy(async (event: any) => {
 
         const employee = fetchEmployeeDetails(employeeId) // function to fetch employee details
 
-        return responseBody(200, employee);
+        return {
+            statusCode: 200,
+            body: JSON.stringify(employee),
+        };
     } catch (error: any) {
         console.log("Error in fetching employees data", error);
-        return responseBody(400, error.message);
+        return {
+            statusCode: 400,
+            body: error.message,
+        };
     }
 }).use(
     redisCacheMiddleware({
@@ -62,4 +68,38 @@ export const getEmployee = middy(async (event: any) => {
 
 These are the available config options.
 
-Except for `redisConfig`, all other options can be set at default global level, applicable to all routes, or at a route level
+Except for `redisConfig`, all other config options can be set as default at global level, applicable to all routes,
+or at a route level
+
+```js
+{
+    // redis connection options, need to be defined in setDefaultConfig function
+    //default: { socket: { host: "localhost", port: 6379 } }
+    redisConfig: {
+        socket: {
+            host: <<REDIS HOST STRING>>,
+            port: <<REDIS PORT>>
+        }
+    },
+
+    // define when to skip caching the response, for example: skip caching when the controller returns empty response
+    //default: (middyEvent: any) => !middyEvent?.response?.body
+    skipCachingFunc: <<function returning boolean>>
+
+    //define how to return response on cache hit
+    //default: (cachedBody: string, middyEvent: any) => ({ statusCode: 200, body: cachedBody,})
+    // cachedBody: JSON stringified cache stored in redis, middyEvent: middy middleware event object
+    responseFunc: <<function returnng API Gateway response body>>
+
+    //define the redis cache key
+    //if function,
+    //  - has access to middyEvent (middy middleware event)
+    //  - example: (middyEvent: any) => { return `KEY_ ${middyEvent?.event?.pathParameters?.id}`}
+    //default: "TEST_KEY"
+    key: <<string or function>>
+
+    //define expiry of redis cache key
+    //default: 24 hours
+    expire: <<time in seconds>>
+}
+```
