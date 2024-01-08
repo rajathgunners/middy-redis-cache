@@ -11,5 +11,5 @@ This package will help you add caching to routes with minimum code.
 To install middy-redis-cache, simply:
 
 ```bash
-npm install middy-redis-cache
+npm install @devraj95/middy-redis-cache
 ```
