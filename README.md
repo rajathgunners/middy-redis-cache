@@ -103,3 +103,9 @@ or at a route level
     expire: <<time in seconds>>
 }
 ```
+
+## Redis Unavailability
+
+If the redis server becomes unavailable, the `middy-redis-cache` object will emit errors but will not crash the app. The requests during this time will be bypass cache and will return fresh data
+
+Once the redis recovers, the caching will begin working again.
